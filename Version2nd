@@ -1,0 +1,73 @@
+import java.util.*;
+public class Array2D {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+Array2D test = new Array2D();
+		
+		int[][] myArray;
+		int rowCount = 3, colCount = 3;
+		
+		myArray = test.createArray(rowCount, colCount);
+		test.printArray(myArray, rowCount, colCount);
+		
+		int[][] mirrorArray = test.mirrorArray(myArray, rowCount, colCount);
+		test.printArray(mirrorArray, rowCount, colCount);
+		
+		int[][] rotateArray = test.rotateArray180(myArray, rowCount, colCount);
+		test.printArray(rotateArray, rowCount, colCount);
+		
+	}
+	
+	public int[][] rotateArray180(int[][] myArray, int rowCount, int colCount) {
+		int[][] rotateArray = new int[rowCount][colCount];
+		for (int i = 0, m = rowCount - 1; i < rowCount; i++, m--) {
+			for (int j = 0, k = colCount - 1; j < colCount; j++, k--) {
+				rotateArray[i][j] = myArray[m][k];
+			}
+		}
+		return rotateArray;
+	}
+	
+	
+	public int[][] mirrorArray(int[][] myArray, int rowCount, int colCount) {
+		int[][] mirror = new int[rowCount][colCount];
+		for (int i = 0; i < rowCount; i++) {
+			for (int j = 0, k = colCount - 1; j < colCount; j++, k--) {
+				mirror[i][j] = myArray[i][k];
+			}
+		}
+		return mirror;
+	}
+	
+	public int[][] createArray(int rowCount, int colCount) {
+		int[][] myArray = new int[rowCount][colCount];
+		
+		Scanner reader = new Scanner(System.in);
+		
+		for (int i = 0; i < rowCount; i++) {
+			for (int j = 0; j < colCount; j++) {
+				System.out.printf("Enter number for myArray[%d][%d]: ", i, j);
+				myArray[i][j] = reader.nextInt();
+			}
+		}
+		
+		return myArray;
+	}
+	
+	public void printArray(int[][] myArray, int rowCount, int colCount) {
+		System.out.println("Your array is: ");
+		
+		for (int i = 0; i < rowCount; i++) {
+			for (int j = 0; j < colCount; j++) {
+				System.out.print(myArray[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+
+	}
+
+

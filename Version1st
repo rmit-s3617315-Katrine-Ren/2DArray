@@ -1,0 +1,98 @@
+import java.util.*;
+public class Array2D {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner reader = new Scanner(System.in);
+		int sizeRow=3;
+		int sizeCol=3;
+		int [][] array1 = new int[sizeRow][sizeCol];
+		int [][] array2 = new int[sizeRow][sizeCol];
+		
+		int r, c;
+		
+		r = 0;
+		while(r<sizeRow){
+			c = 0;
+			while (c<sizeCol){
+				System.out.printf("Enter number for array1[%d][%d]: ", r, c);
+				array1[r][c]=reader.nextInt();
+				c= c+1;
+			}
+			r= r+1;
+		}
+
+		System.out.println("You entered");
+		
+		//print the array1
+			r=0;
+			while(r<sizeRow){
+				c=0;
+				while (c<sizeCol){
+					System.out.print(array1[r][c]);
+					c = c+1;
+				}
+				System.out.print("\n");
+				r = r+1;
+			}
+			
+			System.out.println("The mirror array is ");
+
+			r = 0;
+			while(r<sizeRow){
+				c = 0;
+				while (c<sizeCol){
+					array2[r][c]=array1[r][2-c];
+					c= c+1;
+				}
+				r= r+1;
+			}
+
+			
+			//print the mirror array
+			r=0;
+			while(r<sizeRow){
+				c=0;
+				while (c<sizeCol){
+					System.out.print(array2[r][c]);
+					c = c+1;
+				}
+				System.out.print("\n");
+				r = r+1;
+			}
+			
+			System.out.println("The 180 rotation array is ");
+
+			r = 0;
+			while(r<sizeRow){
+				c = 0;
+				while (c<sizeCol){
+					array2[r][c]=array1[sizeRow-1][sizeCol-1];
+					c= c+1; sizeCol=sizeCol-1;
+				}
+				r= r+1; sizeRow = sizeRow-1;
+			}
+
+			//print the 180 rotataion array
+			r=0;
+			while(r<3){
+				c=0;
+				while (c<3){
+					System.out.print(array2[r][c]);
+					c = c+1;
+				}
+				System.out.print("\n");
+				r = r+1;
+			}
+
+				}
+			
+			
+			
+		}
+		
+		
+	
+
+

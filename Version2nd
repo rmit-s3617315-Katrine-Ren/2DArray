@@ -9,7 +9,7 @@ Array2D test = new Array2D();
 		int[][] myArray;
 		int rowCount = 3, colCount = 3;
 		
-		myArray = test.createArray(rowCount, colCount);
+		myArray = test.createArray(rowCount, colCount); // to use createArray, must initialize object test at first//
 		test.printArray(myArray, rowCount, colCount);
 		
 		int[][] mirrorArray = test.mirrorArray(myArray, rowCount, colCount);

@@ -4,7 +4,7 @@ public class Array2D {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-Array2D test = new Array2D();
+	Array2D test = new Array2D();
 		
 		int[][] myArray;
 		int rowCount = 3, colCount = 3;
@@ -20,27 +20,7 @@ Array2D test = new Array2D();
 		
 	}
 	
-	public int[][] rotateArray180(int[][] myArray, int rowCount, int colCount) {
-		int[][] rotateArray = new int[rowCount][colCount];
-		for (int i = 0, m = rowCount - 1; i < rowCount; i++, m--) {
-			for (int j = 0, k = colCount - 1; j < colCount; j++, k--) {
-				rotateArray[i][j] = myArray[m][k];
-			}
-		}
-		return rotateArray;
-	}
-	
-	
-	public int[][] mirrorArray(int[][] myArray, int rowCount, int colCount) {
-		int[][] mirror = new int[rowCount][colCount];
-		for (int i = 0; i < rowCount; i++) {
-			for (int j = 0, k = colCount - 1; j < colCount; j++, k--) {
-				mirror[i][j] = myArray[i][k];
-			}
-		}
-		return mirror;
-	}
-	
+	//Create method to manipulate array
 	public int[][] createArray(int rowCount, int colCount) {
 		int[][] myArray = new int[rowCount][colCount];
 		
@@ -65,6 +45,31 @@ Array2D test = new Array2D();
 			}
 			System.out.println();
 		}
+		
+		
+		
+	public int[][] rotateArray180(int[][] myArray, int rowCount, int colCount) {
+		int[][] rotateArray = new int[rowCount][colCount];
+		for (int i = 0, m = rowCount - 1; i < rowCount; i++, m--) {
+			for (int j = 0, k = colCount - 1; j < colCount; j++, k--) {
+				rotateArray[i][j] = myArray[m][k];
+			}
+		}
+		return rotateArray;
+	}
+	
+	
+	public int[][] mirrorArray(int[][] myArray, int rowCount, int colCount) {
+		int[][] mirror = new int[rowCount][colCount];
+		for (int i = 0; i < rowCount; i++) {
+			for (int j = 0, k = colCount - 1; j < colCount; j++, k--) {
+				mirror[i][j] = myArray[i][k];
+			}
+		}
+		return mirror;
+	}
+	
+	
 	}
 
 
